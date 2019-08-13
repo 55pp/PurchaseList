@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html lang="eng"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<div th:fragment="header">
+    <nav class="navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" th:href="@{/}">Purchase list for today</a>
+                <ul class="nav navbar-nav">
+                    <li><a href="#" th:href="@{/purchases/today}">Full purchase list for today</a></li>
+                    <li><a href="#" th:href="@{/purchases/tomorrow}">Purchase list for tomorrow</a></li>
+                    <li><a href="#" th:href="@{/purchases/yesterday}">Purchase list for yesterday</a></li>
+                    <li><a href="#" th:href="@{/purchases/expired}">Expired purchase list</a></li>
+                    <li><a href="#" th:href="@{/purchases/history}">History</a></li>
+                    <li><a href="#" th:href="@{/purchase/new}">New purchase</a></li>
+                    <li><a href="#" th:href="@{/periods}">Periods</a></li>
+                    <li><a href="#" th:href="@{/period/new}">New period</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+</html>

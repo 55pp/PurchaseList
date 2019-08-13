@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/head :: head"></head>
+<body>
+<div class="container">
+    <div th:replace="fragments/header :: header"></div>
+    <div th:if="${not #lists.isEmpty(periods)}">
+        <div th:fragment="periods">
+            <table class="table table-bordered table-hover horizontal-align">
+                <thead>
+                <tr>
+                    <th style="width: 5%">#</th>
+                    <th style="width: 25%">Name</th>
+                    <th class="dropdown" style="width: 20%">DateLast
+                    </th>
+                    <th class="dropdown" style="width: 20%">Number of days
+                    </th>
+                    <th style="width: 5%">Edit</th>
+                    <th style="width: 5%">Delete</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="period : ${periods}">
+                    <td th:text="${period.id}" style="text-align: center">#</td>
+                    <td th:text="${period.name}">Name</td>
+                    <td th:text="${#dates.format(period.dateLast, 'dd-MMM-yyyy')}" style="text-align: center">DateLast</td>
+                    <td th:text="${period.numdays}">Numdays</td>
+                    <td style="text-align: center">
+                        <a th:href="@{'/period/edit/{id}'(id=${period.id})}"><i class="fa fa-edit" style="font-size:20px"></i></a>
+                        <!--                        <button  class="btn btn-primary ajax-btn-exp-pr fa fa-edit" onclick="location.href='/purchase/edit/${purchase.id}}'"></button>-->
+                    </td>
+                    <td style="text-align: center">
+                        <!--                        <a th:href="@{'/purchase/edit/{id}'(id=${purchase.id})}"><i class="fa fa-edit" style="font-size:20px"></i></a>-->
+                        <button  class="btn btn-primary ajax-btn-exp-per fa fa-trash" th:value="${type + '-' + period.id}"></button>
+                    </td>
+                    <!--                    <td style="text-align: center"><a class="ajax-btn-exp-pr" value="${type + '-' + purchase.id}" th:href="@{'/purchase/delete/{id}'(id=${purchase.id})}"><i class="fa fa-trash" style="font-size:20px"></i></a></td>-->
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div th:replace="fragments/footer :: footer"></div>
+</body>
+</html>

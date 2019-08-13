@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!--suppress ALL -->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/head :: head"></head>
+<body>
+<div class="container">
+    <div th:replace="fragments/header :: header"></div>
+    <div th:fragment="purchases">
+        <table class="table table-bordered table-hover horizontal-align">
+            <thead>
+            <tr>
+                <th style="width: 5%">#</th>
+                <th style="width: 25%">Name</th>
+                <th class="dropdown" style="width: 20%">DateFrom
+                </th>
+                <th class="dropdown" style="width: 20%">DateTo
+                </th>
+                <th class="dropdown" style="width: 20%">DateWhen
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="purchase : ${purchases}">
+                <td th:text="${purchase.id}" style="text-align: center">#</td>
+                <td th:text="${purchase.name}">Name</td>
+                <td th:text="${#dates.format(purchase.dateFrom, 'dd-MMM-yyyy')}" style="text-align: center">DateFrom</td>
+                <td th:text="${#dates.format(purchase.dateTo, 'dd-MMM-yyyy')}" style="text-align: center">DateTo</td>
+                <td th:text="${#dates.format(purchase.dateWhen, 'dd-MMM-yyyy')}" style="text-align: center">DateWhen</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div th:replace="fragments/footer :: footer"></div>
+</body>
+</html>

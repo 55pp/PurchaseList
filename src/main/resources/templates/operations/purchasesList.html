@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!--suppress ALL -->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<div th:fragment="purchases">
+    <table class="table table-bordered table-hover horizontal-align">
+        <thead>
+        <tr>
+            <th style="width: 5%">#</th>
+            <th style="width: 25%">Name</th>
+            <th class="dropdown" style="width: 20%">DateFrom
+            </th>
+            <th class="dropdown" style="width: 20%">DateTo
+            </th>
+            <th class="dropdown" style="width: 20%">Action
+            </th>
+            <th style="width: 5%">Edit</th>
+            <th style="width: 5%">Delete</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="purchase : ${purchases}">
+            <td th:text="${purchase.id}" style="text-align: center">#</td>
+            <td th:text="${purchase.name}">Name</td>
+            <td th:text="${#dates.format(purchase.dateFrom, 'dd-MMM-yyyy')}" style="text-align: center">DateFrom</td>
+            <td th:text="${#dates.format(purchase.dateTo, 'dd-MMM-yyyy')}" style="text-align: center">DateTo</td>
+            <td>
+                <button th:if="${purchase.dateWhen == null}" id="ajax-btn-buy-pr" class="btn btn-primary ajax-btn-buy-pr" th:value="${type + '-' + purchase.id}">Buy</button>
+                <button th:unless="${purchase.dateWhen == null}" id="ajax-btn-rej-pr" class="btn btn-primary ajax-btn-rej-pr" th:value="${type + '-' + purchase.id}">Reject</button>
+            </td>
+            <td style="text-align: center"><a th:href="@{'/purchase/edit/{id}'(id=${purchase.id})}"><i class="fa fa-edit" style="font-size:20px"></i></a></td>
+            <td style="text-align: center">
+                <!--                        <a th:href="@{'/purchase/edit/{id}'(id=${purchase.id})}"><i class="fa fa-edit" style="font-size:20px"></i></a>-->
+                <button  class="btn btn-primary ajax-btn-del-pr fa fa-trash" th:value="${type + '-' + purchase.id}"></button>
+            </td>
+<!--            <td style="text-align: center"><a th:href="@{'/purchase/delete/{id}'(id=${purchase.id})}"><i class="fa fa-trash" style="font-size:20px"></i></a></td>-->
+        </tr>
+        </tbody>
+    </table>
+</div>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<!--suppress ALL -->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/head :: head"></head>
+<body>
+<div class="container">
+    <div th:replace="fragments/header :: header"></div>
+    <div class="container">
+
+            <div class="form-group">
+                <input type="text" class="form-control" id="name" th:name="name" th:value="${purchase.name}" placeholder="Enter purchase name" maxlength="100"/>
+            </div>
+            <div class="form-group">
+                <input type="date" class="form-control" id="dateFrom" th:name="dateFrom" th:value="${purchase.dateFrom}" placeholder="Enter purchase name" maxlength="100"/>
+            </div>
+            <div class="form-group">
+                <input type="date" class="form-control" id="dateTo" th:name="dateTo" th:value="${purchase.dateTo}" placeholder="Enter purchase name" maxlength="100"/>
+            </div>
+            <button type="submit" id="ajax-btn-new-pr" class="btn btn-primary">Submit</button>
+
+    </div>
+    <div th:replace="fragments/footer :: footer"></div>
+</div>
+</body>
+</html>
