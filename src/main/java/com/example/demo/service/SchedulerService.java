@@ -12,7 +12,7 @@ import java.util.List;
 
 @Service
 public class SchedulerService {
-    private static final String CRON = "*/10 * * * * *";
+    private static final String CRON = "* */10 * * * *";
 
     @Autowired
     private final PeriodicPurchaseService periodicPurchaseService;
