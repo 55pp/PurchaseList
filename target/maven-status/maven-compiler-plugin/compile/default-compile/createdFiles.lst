@@ -1,0 +1,10 @@
+com/example/demo/entity/PeriodicPurchase.class
+com/example/demo/controller/PurchasesController.class
+com/example/demo/DemoApplication.class
+com/example/demo/repository/PurchaseRepository.class
+com/example/demo/service/PeriodicPurchaseService.class
+com/example/demo/service/PurchaseService.class
+com/example/demo/service/SchedulerService.class
+com/example/demo/repository/PeriodicPurchaseRepository.class
+com/example/demo/entity/Purchase.class
+com/example/demo/controller/PeriodicPurchaseController.class

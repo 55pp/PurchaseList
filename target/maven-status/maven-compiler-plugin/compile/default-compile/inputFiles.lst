@@ -1,0 +1,10 @@
+/home/tester/IdeaProjects/demo/src/main/java/com/example/demo/entity/PeriodicPurchase.java
+/home/tester/IdeaProjects/demo/src/main/java/com/example/demo/controller/PeriodicPurchaseController.java
+/home/tester/IdeaProjects/demo/src/main/java/com/example/demo/entity/Purchase.java
+/home/tester/IdeaProjects/demo/src/main/java/com/example/demo/controller/PurchasesController.java
+/home/tester/IdeaProjects/demo/src/main/java/com/example/demo/service/SchedulerService.java
+/home/tester/IdeaProjects/demo/src/main/java/com/example/demo/service/PurchaseService.java
+/home/tester/IdeaProjects/demo/src/main/java/com/example/demo/repository/PurchaseRepository.java
+/home/tester/IdeaProjects/demo/src/main/java/com/example/demo/DemoApplication.java
+/home/tester/IdeaProjects/demo/src/main/java/com/example/demo/service/PeriodicPurchaseService.java
+/home/tester/IdeaProjects/demo/src/main/java/com/example/demo/repository/PeriodicPurchaseRepository.java
