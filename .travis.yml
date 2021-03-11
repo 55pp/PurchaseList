@@ -6,7 +6,7 @@ script:
 deploy:
   provider: heroku
   api_key:
-    secure: 58c0d6f0-6d86-4b15-bb6e-c6d28751fdbc
+    secure: 0026f1fb-4db4-4683-bec1-82e2e63ad131
   app: clientd
   on:
     all_branches: true
